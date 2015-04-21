@@ -244,5 +244,25 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
+
+        if(savedInstanceState != null) {
+            p1 = savedInstanceState.getInt("Player 1");
+            p1life.setText("Player 1: " + p1);
+            p2 = savedInstanceState.getInt("Player 2");
+            p2life.setText("Player 2: " + p2);
+            p3 = savedInstanceState.getInt("Player 3");
+            p3life.setText("Player 3: " + p3);
+            p4 = savedInstanceState.getInt("Player 4");
+            p4life.setText("Player 4: " + p4);
+        }
+
+    }
+
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("Player 1", p1);
+        savedInstanceState.putInt("Player 2", p2);
+        savedInstanceState.putInt("Player 3", p3);
+        savedInstanceState.putInt("Player 4", p4);
     }
 }
